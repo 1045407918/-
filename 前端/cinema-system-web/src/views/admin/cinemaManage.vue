@@ -203,7 +203,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/schedule/view'
+        url: 'http://localhost:8888/schedule/view'
       }).then(function (res) {
         if (res.data.success) {
           that.days = res.data.content
@@ -218,7 +218,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/hall/all'
+        url: 'http://localhost:8888/hall/all'
       }).then(function (res) {
         if (res.data.success) {
           that.hallData = res.data.content
@@ -234,7 +234,7 @@ export default {
       let that = this
       this.$axios({
         method: 'post',
-        url: 'http://localhost:8080/schedule/view/set',
+        url: 'http://localhost:8888/schedule/view/set',
         data: {
           day: temp
         }
@@ -260,7 +260,7 @@ export default {
       let that = this
       this.$axios({
         method: 'post',
-        url: 'http://localhost:8080/hall/changeHallInfo',
+        url: 'http://localhost:8888/hall/changeHallInfo',
         data: that.toEditHall
       }).then(function (res) {
         if (res.data.success) {
@@ -284,7 +284,7 @@ export default {
       }
       this.$axios({
         method: 'post',
-        url: 'http://localhost:8080/hall/addHall',
+        url: 'http://localhost:8888/hall/addHall',
         data: temp
       }).then(function (res) {
         if (res.data.success) {

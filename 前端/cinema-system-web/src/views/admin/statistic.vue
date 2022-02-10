@@ -87,7 +87,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/statistics/scheduleRate'
+        url: 'http://localhost:8888/statistics/scheduleRate'
       }).then((res) => {
         if (res.data.success) {
           that.scheduleRate = res.data.content || []
@@ -156,7 +156,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/statistics/boxOffice/total'
+        url: 'http://localhost:8888/statistics/boxOffice/total'
       }).then((res) => {
         if (res.data.success) {
           that.boxOffice = res.data.content || []
@@ -200,7 +200,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/statistics/audience/price'
+        url: 'http://localhost:8888/statistics/audience/price'
       }).then((res) => {
         if (res.data.success) {
           that.audiencePrice = res.data.content || []
@@ -243,7 +243,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/statistics/PlacingRate'
+        url: 'http://localhost:8888/statistics/PlacingRate'
       }).then((res) => {
         if (res.data.success) {
           that.placingRate = res.data.content || []
@@ -286,7 +286,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/statistics/popular/movie?days=30&movieNum=5'
+        url: 'http://localhost:8888/statistics/popular/movie?days=30&movieNum=5'
       }).then((res) => {
         if (res.data.success) {
           that.popularMovie = res.data.content || []

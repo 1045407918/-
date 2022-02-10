@@ -101,7 +101,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/records/getOrderRecordByUser/' + sessionStorage.getItem('id')
+        url: 'http://localhost:8888/records/getOrderRecordByUser/' + sessionStorage.getItem('id')
       }).then(function (res) {
         if (res.data.success) {
           that.orderList = res.data.content

@@ -168,7 +168,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/ticket/refundStrategy/all'
+        url: 'http://localhost:8888/ticket/refundStrategy/all'
       }).then(function (res) {
         if (res.data.success) {
           that.strategyData = res.data.content
@@ -190,7 +190,7 @@ export default {
       let that = this
       this.$axios({
         method: 'post',
-        url: 'http://localhost:8080/ticket/refundStrategy/update',
+        url: 'http://localhost:8888/ticket/refundStrategy/update',
         data: that.toEditStrategy
       }).then(function (res) {
         if (res.data.success) {
@@ -211,7 +211,7 @@ export default {
       let that = this
       this.$axios({
         method: 'post',
-        url: 'http://localhost:8080/ticket/refundStrategy/add',
+        url: 'http://localhost:8888/ticket/refundStrategy/add',
         data: that.toAddStrategy
       }).then(function (res) {
         if (res.data.success) {
@@ -231,7 +231,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/ticket/refundStrategy/use?id=' + that.selectedStrategyId
+        url: 'http://localhost:8888/ticket/refundStrategy/use?id=' + that.selectedStrategyId
       }).then((res) => {
         if (res.data.success) {
           this.$Message.success('应用成功！')

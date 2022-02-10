@@ -65,7 +65,7 @@ export default {
     let that = this
     this.$axios({
       method: 'get',
-      url: 'http://localhost:8080/coupon/' + sessionStorage.getItem('id') + '/get'
+      url: 'http://localhost:8888/coupon/' + sessionStorage.getItem('id') + '/get'
     }).then(function (res) {
       if (res.data.success) {
         that.myCoupons = res.data.content

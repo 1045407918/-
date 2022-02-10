@@ -229,7 +229,7 @@ export default {
     let that = this
     this.$axios({
       method: 'get',
-      url: 'http://localhost:8080/hall/all'
+      url: 'http://localhost:8888/hall/all'
     }).then(function (res) {
       if (res.data.success) {
         that.hallList = res.data.content
@@ -237,7 +237,7 @@ export default {
     })
     this.$axios({
       method: 'get',
-      url: 'http://localhost:8080/movie/all'
+      url: 'http://localhost:8888/movie/all'
     }).then(function (res) {
       if (res.data.success) {
         that.movieList = res.data.content
@@ -250,7 +250,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/schedule/search?hallId=' + that.selectedHallId + '&startDate=' + that.selectedDate.toLocaleDateString().replace(/-/g, '/')
+        url: 'http://localhost:8888/schedule/search?hallId=' + that.selectedHallId + '&startDate=' + that.selectedDate.toLocaleDateString().replace(/-/g, '/')
       }).then(function (res) {
         if (res.data.success) {
           that.schedules = that.computeScheduleStyle(res.data.content)
@@ -299,7 +299,7 @@ export default {
       let that = this
       this.$axios({
         method: 'post',
-        url: 'http://localhost:8080/schedule/update',
+        url: 'http://localhost:8888/schedule/update',
         data: {
           id: that.toEditSchedule.id,
           hallId: that.toEditSchedule.hallId,
@@ -323,7 +323,7 @@ export default {
       let that = this
       this.$axios({
         method: 'post',
-        url: 'http://localhost:8080/schedule/add',
+        url: 'http://localhost:8888/schedule/add',
         data: {
           id: that.toAddSchedule.id,
           hallId: that.toAddSchedule.hallId,
@@ -347,7 +347,7 @@ export default {
       let that = this
       this.$axios({
         method: 'post',
-        url: 'http://localhost:8080/schedule/delete/batch',
+        url: 'http://localhost:8888/schedule/delete/batch',
         data: {
           scheduleIdList: [id]
         }

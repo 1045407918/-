@@ -73,7 +73,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/statistics/popular/movie?days=60&movieNum=10'
+        url: 'http://localhost:8888/statistics/popular/movie?days=60&movieNum=10'
       }).then(function (res) {
         if (res.data.success) {
           that.hotMovies = res.data.content
@@ -88,7 +88,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/movie/all/exclude/off'
+        url: 'http://localhost:8888/movie/all/exclude/off'
       }).then(function (res) {
         if (res.data.success) {
           that.movieList = res.data.content.slice(0, 6)

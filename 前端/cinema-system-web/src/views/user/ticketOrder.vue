@@ -255,7 +255,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/vip/' + sessionStorage.getItem('id') + '/get'
+        url: 'http://localhost:8888/vip/' + sessionStorage.getItem('id') + '/get'
       }).then(function (res) {
         if (res.data.success) {
           that.isVip = true
@@ -271,7 +271,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/ticket/get/occupiedSeats?scheduleId=' + scheduleId
+        url: 'http://localhost:8888/ticket/get/occupiedSeats?scheduleId=' + scheduleId
       }).then(function (res) {
         if (res.data.success) {
           that.seatsArray = res.data.content.seats
@@ -291,7 +291,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/movie/' + movieId + '/' + sessionStorage.getItem('id')
+        url: 'http://localhost:8888/movie/' + movieId + '/' + sessionStorage.getItem('id')
       }).then(function (res) {
         if (res.data.success) {
           that.movieName = res.data.content.name
@@ -334,7 +334,7 @@ export default {
       // 锁定座位
       this.$axios({
         method: 'post',
-        url: 'http://localhost:8080/ticket/lockSeat',
+        url: 'http://localhost:8888/ticket/lockSeat',
         data: {
           userId: sessionStorage.getItem('id'),
           scheduleId: that.scheduleId,
@@ -355,7 +355,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/coupon/' + sessionStorage.getItem('id') + '/get'
+        url: 'http://localhost:8888/coupon/' + sessionStorage.getItem('id') + '/get'
       }).then(function (res) {
         if (res.data.success) {
           let tempCoupons = []
@@ -411,7 +411,7 @@ export default {
       } else {
         this.$axios({
           method: 'post',
-          url: 'http://localhost:8080/ticket/vip/buy?ticketId=' + that.selectedTicketId + '&couponId=' + that.selectedCouponId
+          url: 'http://localhost:8888/ticket/vip/buy?ticketId=' + that.selectedTicketId + '&couponId=' + that.selectedCouponId
         }).then(function (res) {
           if (res.data.success) {
             that.step = 2
@@ -428,7 +428,7 @@ export default {
       let that = this
       this.$axios({
         method: 'post',
-        url: 'http://localhost:8080/ticket/buy?ticketId=' + that.selectedTicketId + '&couponId=' + that.selectedCouponId,
+        url: 'http://localhost:8888/ticket/buy?ticketId=' + that.selectedTicketId + '&couponId=' + that.selectedCouponId,
         data: {
           cardNumber: that.bankCardData.account,
           password: that.bankCardData.password
@@ -447,7 +447,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/ticket/getByOrderID/' + orderId
+        url: 'http://localhost:8888/ticket/getByOrderID/' + orderId
       }).then(function (res) {
         if (res.data.success) {
           let tempSeats = []
@@ -476,7 +476,7 @@ export default {
         let that = this
         this.$axios({
           method: 'get',
-          url: 'http://localhost:8080/records/getOrderRecord/' + orderId
+          url: 'http://localhost:8888/records/getOrderRecord/' + orderId
         }).then(function (res) {
           if (res.data.success) {
             that.initOrder(res.data.content)

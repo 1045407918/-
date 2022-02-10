@@ -180,7 +180,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/staff/all'
+        url: 'http://localhost:8888/staff/all'
       }).then(function (res) {
         if (res.data.success) {
           let temp = res.data.content
@@ -210,7 +210,7 @@ export default {
       let that = this
       this.$axios({
         method: 'post',
-        url: 'http://localhost:8080/staff/update',
+        url: 'http://localhost:8888/staff/update',
         data: that.toEditUser
       }).then(function (res) {
         if (res.data.success) {
@@ -227,7 +227,7 @@ export default {
       let that = this
       this.$axios({
         method: 'post',
-        url: 'http://localhost:8080/staff/add',
+        url: 'http://localhost:8888/staff/add',
         data: that.toAddUser
       }).then(function (res) {
         if (res.data.success) {
@@ -249,7 +249,7 @@ export default {
       let that = this
       this.$axios({
         method: 'post',
-        url: 'http://localhost:8080/staff/del/' + id
+        url: 'http://localhost:8888/staff/del/' + id
       }).then(function (res) {
         if (res.data.success) {
           that.$Message.success('删除成功')

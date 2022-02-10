@@ -226,7 +226,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/movie/' + this.$route.query.id + '/' + sessionStorage.getItem('id')
+        url: 'http://localhost:8888/movie/' + this.$route.query.id + '/' + sessionStorage.getItem('id')
       }).then(function (res) {
         if (res.data.success) {
           that.movieDetails = res.data.content
@@ -242,7 +242,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/movie/' + this.$route.query.id + '/like/date'
+        url: 'http://localhost:8888/movie/' + this.$route.query.id + '/like/date'
       }).then(function (res) {
         if (res.data.success) {
           that.movieLikeDate = res.data.content
@@ -309,7 +309,7 @@ export default {
         if (valid) {
           this.$axios({
             method: 'post',
-            url: 'http://localhost:8080/movie/update',
+            url: 'http://localhost:8888/movie/update',
             data: that.modifyMovieForm
           }).then((res) => {
             if (res.data.success) {
@@ -331,7 +331,7 @@ export default {
       let that = this
       this.$axios({
         method: 'post',
-        url: 'http://localhost:8080/movie/off/batch',
+        url: 'http://localhost:8888/movie/off/batch',
         data: {
           movieIdList: [that.movieDetails.id]
         }

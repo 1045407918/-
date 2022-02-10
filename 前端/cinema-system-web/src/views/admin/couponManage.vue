@@ -110,7 +110,7 @@ export default {
       let that = this
       this.$axios({
         method: 'post',
-        url: 'http://localhost:8080/vip/giveCoupon',
+        url: 'http://localhost:8888/vip/giveCoupon',
         data: {
           userId: that.selectedUserList,
           activityId: that.selectedActivityId
@@ -121,7 +121,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/vip/getUserByAmount?amount=' + that.consumption
+        url: 'http://localhost:8888/vip/getUserByAmount?amount=' + that.consumption
       }).then(function (res) {
         if (res.data.success) {
           that.userList = res.data.content
@@ -136,7 +136,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/activity/get'
+        url: 'http://localhost:8888/activity/get'
       }).then(function (res) {
         if (res.data.success) {
           that.activityList = res.data.content

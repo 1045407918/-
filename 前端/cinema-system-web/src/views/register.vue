@@ -139,7 +139,7 @@ export default {
         if (valid) {
           this.$axios({
             method: 'post',
-            url: 'http://localhost:8080/register',
+            url: 'http://localhost:8888/register',
             data: {
               username: that.formData.username,
               password: that.formData.password,

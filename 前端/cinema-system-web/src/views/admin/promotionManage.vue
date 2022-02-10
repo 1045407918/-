@@ -181,7 +181,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/movie/all'
+        url: 'http://localhost:8888/movie/all'
       }).then(function (res) {
         if (res.data.success) {
           that.movieList = res.data.content
@@ -200,7 +200,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/activity/get'
+        url: 'http://localhost:8888/activity/get'
       }).then(function (res) {
         if (res.data.success) {
           that.activityList = res.data.content
@@ -275,7 +275,7 @@ export default {
           // 发起请求
           this.$axios({
             method: 'post',
-            url: 'http://localhost:8080/activity/publish',
+            url: 'http://localhost:8888/activity/publish',
             data: that.createActivityFrom()
           }).then(function (res) {
             if (res.data.success) {

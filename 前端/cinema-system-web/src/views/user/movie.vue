@@ -164,7 +164,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/movie/' + this.$route.query.id + '/' + sessionStorage.getItem('id')
+        url: 'http://localhost:8888/movie/' + this.$route.query.id + '/' + sessionStorage.getItem('id')
       }).then(function (res) {
         if (res.data.success) {
           that.movieDetails = res.data.content
@@ -180,7 +180,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/schedule/view'
+        url: 'http://localhost:8888/schedule/view'
       }).then(function (res) {
         if (res.data.success) {
           that.view = res.data.content
@@ -195,7 +195,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/schedule/search/audience?movieId=' + that.movieDetails.id
+        url: 'http://localhost:8888/schedule/search/audience?movieId=' + that.movieDetails.id
       }).then(function (res) {
         if (res.data.success) {
           that.schedule = res.data.content
@@ -210,7 +210,7 @@ export default {
       let that = this
       this.$axios({
         method: 'post',
-        url: 'http://localhost:8080/movie/' + that.movieDetails.id + '/like?userId=' + sessionStorage.getItem('id')
+        url: 'http://localhost:8888/movie/' + that.movieDetails.id + '/like?userId=' + sessionStorage.getItem('id')
 
       }).then(function (res) {
         if (res.data.success) {
@@ -226,7 +226,7 @@ export default {
       let that = this
       this.$axios({
         method: 'post',
-        url: 'http://localhost:8080/movie/' + that.movieDetails.id + '/unlike?userId=' + sessionStorage.getItem('id')
+        url: 'http://localhost:8888/movie/' + that.movieDetails.id + '/unlike?userId=' + sessionStorage.getItem('id')
       }).then(function (res) {
         if (res.data.success) {
           that.getMovieInfo()

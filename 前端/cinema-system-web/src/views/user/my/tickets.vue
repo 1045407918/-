@@ -121,7 +121,7 @@ export default {
       let that = this
       this.$axios({
         methods: 'get',
-        url: 'http://localhost:8080/ticket/get/' + sessionStorage.getItem('id')
+        url: 'http://localhost:8888/ticket/get/' + sessionStorage.getItem('id')
       }).then(function (res) {
         if (res.data.success) {
           that.myTickets = res.data.content
@@ -136,7 +136,7 @@ export default {
       let that = this
       this.$axios({
         method: 'post',
-        url: 'http://localhost:8080/ticket/refundTicket?ticketId=' + ticketId
+        url: 'http://localhost:8888/ticket/refundTicket?ticketId=' + ticketId
       }).then(function (res) {
         if (res.data.success) {
           that.getMyTickets()

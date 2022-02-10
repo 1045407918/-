@@ -41,7 +41,7 @@ export default {
     let that = this
     this.$axios({
       method: 'get',
-      url: 'http://localhost:8080/movie/search?keyword=' + that.$route.query.keyword
+      url: 'http://localhost:8888/movie/search?keyword=' + that.$route.query.keyword
     }).then(function (res) {
       if (res.data.success) {
         that.movieList = res.data.content

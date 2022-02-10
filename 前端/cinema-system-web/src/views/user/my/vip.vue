@@ -177,7 +177,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/records/selectChargeRecordByUserID/' + sessionStorage.getItem('id')
+        url: 'http://localhost:8888/records/selectChargeRecordByUserID/' + sessionStorage.getItem('id')
       }).then(function (res) {
         if (res.data.success) {
           that.chargeRecords = res.data.content
@@ -192,7 +192,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/vip/' + sessionStorage.getItem('id') + '/get'
+        url: 'http://localhost:8888/vip/' + sessionStorage.getItem('id') + '/get'
       }).then(function (res) {
         if (res.data.success) {
           that.isVIP = true
@@ -207,7 +207,7 @@ export default {
 
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/vip/getVIPInfo'
+        url: 'http://localhost:8888/vip/getVIPInfo'
       }).then(function (res) {
         if (res.data.success) {
           that.VIPCardPrice = res.data.content.price
@@ -262,7 +262,7 @@ export default {
       }
       this.$axios({
         method: 'post',
-        url: 'http://localhost:8080/vip/add?userId=' + sessionStorage.getItem('id'),
+        url: 'http://localhost:8888/vip/add?userId=' + sessionStorage.getItem('id'),
         data: {
           cardNumber: that.formData.account,
           password: that.formData.password
@@ -285,7 +285,7 @@ export default {
       }
       this.$axios({
         method: 'post',
-        url: 'http://localhost:8080/vip/charge',
+        url: 'http://localhost:8888/vip/charge',
         data: {
           cardNumber: that.formData.account,
           password: that.formData.password,

@@ -192,7 +192,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/movie/all'
+        url: 'http://localhost:8888/movie/all'
       }).then(function (res) {
         if (res.data.success) {
           that.movieList = res.data.content
@@ -204,7 +204,7 @@ export default {
       })
       this.$axios({
         method: 'get',
-        url: 'http://localhost:8080/movie/all/exclude/off'
+        url: 'http://localhost:8888/movie/all/exclude/off'
       }).then(function (res) {
         if (res.data.success) {
           that.excludeOffMovieList = res.data.content
@@ -228,7 +228,7 @@ export default {
         if (valid) {
           this.$axios({
             method: 'post',
-            url: 'http://localhost:8080/movie/add',
+            url: 'http://localhost:8888/movie/add',
             data: that.addMovieForm
           }).then((res) => {
             if (res.data.success) {
